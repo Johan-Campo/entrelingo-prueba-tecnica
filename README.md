@@ -32,7 +32,7 @@ Formulario de Airtable ──────────────────┘
 ## Cómo verlo, sin instalar nada
 
 1. **La landing:** descarga [`preview.html`](deliverables/wordpress/preview.html) y ábrelo en el navegador. Incluye animaciones, carrusel y formulario.
-2. **La landing dentro de WordPress:** copia el contenido de [`playground-url.txt`](deliverables/wordpress/playground-url.txt) y pégalo en la barra de direcciones. Se crea un WordPress temporal con la página ya publicada. Es un enlace largo, pero funciona; los cambios que hagas no se guardan.
+2. **La landing dentro de WordPress:** abre [este enlace](https://playground.wordpress.net/?blueprint-url=https://gist.githubusercontent.com/Johan-Campo/b0caae44bf854acaaed11dd0d37d60b9/raw/blueprint.json). Se crea un WordPress temporal con la página ya publicada; los cambios que hagas no se guardan. Si ese enlace dejara de funcionar, el contenido de [`playground-url.txt`](deliverables/wordpress/playground-url.txt) pegado en la barra de direcciones hace lo mismo, aunque es mucho más largo.
 3. **Los correos:** abre [`email-preview.html`](deliverables/make/email-preview.html). Muestra los tres avisos, uno por marca, con datos de ejemplo.
 
 ## Cómo ejecutarlo
