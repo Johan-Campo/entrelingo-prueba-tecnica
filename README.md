@@ -27,7 +27,7 @@ Formulario de Airtable ──────────────────┘
 | **Parte 2** · Captura del escenario | [`escenario-ejecucion-exitosa.jpg`](deliverables/make/screenshots/escenario-ejecucion-exitosa.jpg) | Hecho |
 | **Parte 3** · Landing en WordPress | Vista previa: [`deliverables/wordpress/preview.html`](deliverables/wordpress/preview.html). Capturas: [`screenshots/`](deliverables/wordpress/screenshots/) | Hecho y probado de punta a punta, también dentro de WordPress |
 | **Parte 4** · Documento de IA y documentación | [`deliverables/PARTE4_IA_Y_DOCUMENTACION.md`](deliverables/PARTE4_IA_Y_DOCUMENTACION.md) | Hecho |
-| **Video** de 5 a 10 minutos | — | **Pendiente** |
+| **Video** de 5 a 10 minutos | [Ver en Google Drive](https://drive.google.com/file/d/1KwsHW5mt5kRflF6yu78JaWaCeCxTqbLF/view?usp=sharing) | Hecho |
 
 ## Cómo verlo, sin instalar nada
 
