@@ -1,0 +1,10 @@
+.env
+
+# Material de la empresa y notas internas: no forman parte de la entrega
+Prueba_tecnica_*.pdf
+docs/PRUEBA_TECNICA.md
+CLAUDE.md
+
+# Temporales
+*.blueprint*.json.tmp
+node_modules/
