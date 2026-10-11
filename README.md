@@ -19,12 +19,12 @@ Formulario de Airtable ──────────────────┘
 | Entregable de la prueba | Dónde verlo | Estado |
 |---|---|---|
 | **Parte 1** · Base y formulario de Airtable | Enlace en [`deliverables/LINKS.md`](deliverables/LINKS.md) | Hecho |
-| **Parte 1** · Vista filtrada "Nuevos por marca" | Se crea en la interfaz de Airtable (la API no permite crear vistas) | **Pendiente** |
-| **Parte 1** · Capturas de la base | — | **Pendiente** |
+| **Parte 1** · Vista filtrada "Nuevos por marca" | Creada en Airtable (Estado = Nuevo, agrupada por marca). Captura: [`02-vista-nuevos-por-marca.jpg`](deliverables/airtable/screenshots/02-vista-nuevos-por-marca.jpg) | Hecho |
+| **Parte 1** · Capturas de la base | [`deliverables/airtable/screenshots/`](deliverables/airtable/screenshots/) | Hecho |
 | **Parte 2** · Blueprint de Make (.json) | [`deliverables/make/blueprint.json`](deliverables/make/blueprint.json) | Hecho y probado |
 | **Parte 2** · Escenario del formulario web (webhook) | [`deliverables/make/landing-webhook.blueprint.json`](deliverables/make/landing-webhook.blueprint.json) | Hecho y probado |
-| **Parte 2** · Diseño de los correos | [`deliverables/make/email-preview.html`](deliverables/make/email-preview.html) (descargar y abrir en el navegador) | Diseño listo; falta probarlo en Make |
-| **Parte 2** · Captura del escenario | — | **Pendiente** |
+| **Parte 2** · Diseño de los correos | [`deliverables/make/email-preview.html`](deliverables/make/email-preview.html) (descargar y abrir en el navegador) | Hecho: importado en Make y enviado a un correo real |
+| **Parte 2** · Captura del escenario | [`escenario-ejecucion-exitosa.jpg`](deliverables/make/screenshots/escenario-ejecucion-exitosa.jpg) | Hecho |
 | **Parte 3** · Landing en WordPress | Vista previa: [`deliverables/wordpress/preview.html`](deliverables/wordpress/preview.html). Capturas: [`screenshots/`](deliverables/wordpress/screenshots/) | Hecho y probado de punta a punta |
 | **Parte 4** · Documento de IA y documentación | [`deliverables/PARTE4_IA_Y_DOCUMENTACION.md`](deliverables/PARTE4_IA_Y_DOCUMENTACION.md) | Hecho |
 | **Video** de 5 a 10 minutos | — | **Pendiente** |
@@ -51,7 +51,8 @@ Si cambias el diseño de los correos o el prompt, ejecuta `node scripts/build-ma
 
 ```
 deliverables/            lo que se entrega
-  make/                  blueprints de Make, vista previa de correos y su fuente
+  airtable/              capturas de la base y de la vista filtrada
+  make/                  blueprints de Make, capturas, vista previa de correos y su fuente
   wordpress/             landing (HTML), blueprint de Playground, capturas y logo
   LINKS.md               enlaces: formulario de Airtable, webhook, video
   PARTE4_IA_Y_DOCUMENTACION.md
