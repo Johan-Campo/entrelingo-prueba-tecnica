@@ -6,7 +6,7 @@
   .wp-site-blocks { padding:0 !important; }
   .wp-block-post-content, .entry-content { padding:0 !important; margin:0 !important; max-width:none !important; }
   html, body { margin:0; overflow-x:hidden; }
-  html { scroll-behavior:smooth; }
+  html { scroll-behavior:smooth; scroll-padding-top:84px; }
 
   .elg { --navy:#0D1E39; --navy2:#14315C; --teal:#39BB9B; --tealD:#1F8F75; --mint:#E6F6F1; --cloud:#F6F9FB; --ink:#0D1E39; --muted:#5B6B80; --sun:#F6B94C; --ease:cubic-bezier(.2,.7,.2,1);
     font-family:'Asap',system-ui,sans-serif; color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased;
@@ -41,6 +41,9 @@
   .elg .btn.ghost { background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.22); }
   .elg .btn.ghost:hover { background:rgba(255,255,255,.16); transform:translateY(-2px); }
   .elg .btn.small { padding:10px 20px; font-size:14px; }
+  .elg a, .elg button, .elg summary, .elg label { touch-action:manipulation; }
+  .elg .skip { position:absolute; left:16px; top:-60px; z-index:100; background:#F6B94C; color:#0D1E39; padding:10px 18px; border-radius:10px; font-weight:700; text-decoration:none; transition:top .2s; }
+  .elg .skip:focus { top:12px; }
   .elg :focus-visible { outline:3px solid var(--sun); outline-offset:3px; border-radius:8px; }
 
   /* ---------- hero ---------- */
@@ -272,7 +275,7 @@
   .elg .dots button { position:relative; width:46px; height:5px; border:0; padding:0; border-radius:5px; background:rgba(255,255,255,.22); cursor:pointer; overflow:hidden; }
   .elg .dots button i { position:absolute; inset:0; background:var(--teal); transform:scaleX(0); transform-origin:left; }
   .elg .dots button.on i { animation:fillbar var(--dur,6s) linear forwards; }
-  .elg .car.paused ~ .dots button.on i { animation-play-state:paused; }
+  .elg .car.paused ~ .dots button.on i, .elg .car.hold ~ .dots button.on i { animation-play-state:paused; }
   @keyframes fillbar { to { transform:scaleX(1); } }
   .elg .credit { margin:18px 0 0; text-align:center; font-size:12px; color:#7f95b1; }
   .elg .credit a { text-decoration:underline; }
@@ -330,6 +333,7 @@
 </style>
 
 <div class="elg" id="inicio">
+  <a class="skip" href="#proceso">Saltar al contenido</a>
   <div class="prog" id="prog"></div>
   <header class="hd" id="hd">
     <div class="wrap">
@@ -342,6 +346,7 @@
     </div>
   </header>
 
+  <main id="contenido">
   <section class="hero">
     <i class="blob b1"></i><i class="blob b2"></i>
     <div class="wrap">
@@ -350,19 +355,19 @@
         <h1 aria-label="De principio a fin, contigo."><span class="w">De</span> <span class="w">principio</span> <span class="w">a</span> <span class="w">fin,</span> <em>contigo.<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 40 2, 90 14, 130 6 S 185 4, 198 8"/></svg></em></h1>
         <p class="lead load l3">Traducciones NAATI, Skills Assessment y asesoría migratoria, todo en español. Te acompañamos en cada paso para que migrar a Australia sea un camino claro, no una apuesta.</p>
         <div class="ctas load l4">
-          <a class="btn primary" href="#formulario">Cuéntanos tu caso <svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn primary" href="#formulario">Cuéntanos tu caso <svg aria-hidden="true" focusable="false" class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="btn ghost" href="#proceso">Ver cómo trabajamos</a>
         </div>
         <div class="proof load l5">
-          <span><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Traducciones NAATI</span>
-          <span><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Agentes registrados MARA</span>
-          <span><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Atención en español</span>
+          <span><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Traducciones NAATI</span>
+          <span><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Agentes registrados MARA</span>
+          <span><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Atención en español</span>
         </div>
       </div>
 
       <div class="route load l6" id="routecard" aria-hidden="true">
         <i class="cloud c1"></i><i class="cloud c2"></i><i class="cloud c3"></i>
-        <svg class="map" id="rt" viewBox="0 0 520 440">
+        <svg aria-hidden="true" focusable="false" class="map" id="rt" viewBox="0 0 520 440">
           <defs><linearGradient id="gr" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#39BB9B"/><stop offset="1" stop-color="#9be7d3"/></linearGradient></defs>
           <path id="rp" class="trail" d="M52 372 C 150 150, 250 400, 330 232 S 440 110, 468 62"/>
           <path id="rd" class="done" d="M52 372 C 150 150, 250 400, 330 232 S 440 110, 468 62" stroke-dasharray="1000" stroke-dashoffset="1000"/>
@@ -394,42 +399,42 @@
         <p class="sub">Cada paso prepara al siguiente. Por eso los llevamos juntos y en tu idioma.</p>
       </div>
       <div class="steps" id="steps">
-        <div class="rail" aria-hidden="true"><i></i><b><svg viewBox="0 0 24 24"><path d="M12 2 L15 9 L22 12 L15 14 L12 22 L9 14 L2 12 L9 9 Z" transform="rotate(0 12 12)"/></svg></b></div>
+        <div class="rail" aria-hidden="true"><i></i><b><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2 L15 9 L22 12 L15 14 L12 22 L9 14 L2 12 L9 9 Z" transform="rotate(0 12 12)"/></svg></b></div>
         <article class="step rv d1">
           <span class="num">1</span>
-          <div class="ico"><svg viewBox="0 0 24 24"><path pathLength="1" d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path pathLength="1" d="M14 3v5h5M9 13h6M9 17h4"/></svg></div>
+          <div class="ico"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path pathLength="1" d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path pathLength="1" d="M14 3v5h5M9 13h6M9 17h4"/></svg></div>
           <span class="tag">Entrelingo</span>
           <h3>Traduce tus documentos</h3>
           <p>Traducciones NAATI y certificadas para visas, estudios y reconocimiento profesional. Tus documentos, listos para presentar.</p>
           <ul>
-            <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Traducciones NAATI y certificadas</li>
-            <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Español e inglés</li>
+            <li><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Traducciones NAATI y certificadas</li>
+            <li><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Español e inglés</li>
           </ul>
-          <a class="more" href="#formulario" data-svc="Entrelingo">Pedir este servicio <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="more" href="#formulario" data-svc="Entrelingo">Pedir este servicio <svg aria-hidden="true" focusable="false" class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
         <article class="step rv d2">
           <span class="num">2</span>
-          <div class="ico"><svg viewBox="0 0 24 24"><circle pathLength="1" cx="12" cy="9" r="6"/><path pathLength="1" d="M8.5 14.5 7 22l5-3 5 3-1.5-7.5"/></svg></div>
+          <div class="ico"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><circle pathLength="1" cx="12" cy="9" r="6"/><path pathLength="1" d="M8.5 14.5 7 22l5-3 5 3-1.5-7.5"/></svg></div>
           <span class="tag">SkillsPRO</span>
           <h3>Skills Assessment</h3>
           <p>Reconocemos tu experiencia por la vía correcta. Armamos tu expediente profesional desde el inicio para evitar idas y vueltas.</p>
           <ul>
-            <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Revisión de tu perfil profesional</li>
-            <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Expediente armado desde el inicio</li>
+            <li><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Revisión de tu perfil profesional</li>
+            <li><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Expediente armado desde el inicio</li>
           </ul>
-          <a class="more" href="#formulario" data-svc="SkillsPRO">Pedir este servicio <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="more" href="#formulario" data-svc="SkillsPRO">Pedir este servicio <svg aria-hidden="true" focusable="false" class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
         <article class="step rv d3">
           <span class="num">3</span>
-          <div class="ico"><svg viewBox="0 0 24 24"><path pathLength="1" d="M3 11l18-8-8 18-2-8z"/></svg></div>
+          <div class="ico"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path pathLength="1" d="M3 11l18-8-8 18-2-8z"/></svg></div>
           <span class="tag">AustraliaPRO</span>
           <h3>Visas y migración</h3>
           <p>Agentes registrados MARA analizan tu perfil y te orientan a elegir entre una visa de estudio o de trabajo: la que de verdad te conviene.</p>
           <ul>
-            <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Agentes registrados MARA</li>
-            <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Visa de estudio o de trabajo, según tu perfil</li>
+            <li><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Agentes registrados MARA</li>
+            <li><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Visa de estudio o de trabajo, según tu perfil</li>
           </ul>
-          <a class="more" href="#formulario" data-svc="AustraliaPRO">Pedir este servicio <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="more" href="#formulario" data-svc="AustraliaPRO">Pedir este servicio <svg aria-hidden="true" focusable="false" class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
       </div>
     </div>
@@ -448,7 +453,7 @@
         <div class="sl"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Melbourne_yarra_twilight.jpg?width=1400" alt="Melbourne y el río Yarra al anochecer" loading="lazy"><div class="cap"><small>Melbourne · Victoria</small><h3>Estudia en grande</h3><p>Universidades, cafés y una comunidad internacional enorme.</p></div></div>
         <div class="sl"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Great_Barrier_Reef_Queensland_Ank_Kumar.jpg?width=1400" alt="Gran Barrera de Coral, Queensland" loading="lazy"><div class="cap"><small>Queensland</small><h3>Vida con aventura</h3><p>Trabaja y estudia con la naturaleza más espectacular a tu alcance.</p></div></div>
         <div class="sl"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Uluru_at_Sunset_in_November_2018.jpg?width=1400" alt="Uluru al atardecer" loading="lazy"><div class="cap"><small>Territorio del Norte</small><h3>Un país por descubrir</h3><p>Y un primer paso bien hecho para llegar hasta aquí.</p></div></div>
-        <div class="cnav"><button type="button" id="cprev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" id="cnext" aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button></div>
+        <div class="cnav"><button type="button" id="cpause" aria-label="Pausar carrusel" aria-pressed="false"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></svg></button><button type="button" id="cprev" aria-label="Anterior"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" id="cnext" aria-label="Siguiente"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button></div>
       </div>
       <div class="dots" id="dots"></div>
       <p class="credit">Fotos: Ank Kumar, Benh Lieu Song, Diliff y Riley Boughton · <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY / CC BY-SA)</p>
@@ -461,12 +466,12 @@
         <span class="eyebrow">Por qué importa</span>
         <span class="qm" aria-hidden="true">“</span>
         <p class="quote" id="quote">Nadie debería migrar <b>solo</b>, ni pagar por errores que se pueden evitar.</p>
-        <a class="btn primary" href="#formulario">Evita estos errores <svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn primary" href="#formulario">Evita estos errores <svg aria-hidden="true" focusable="false" class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="risks" id="risks">
-        <div class="risk rv d1"><span class="x"><svg class="bad" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><svg class="good" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span><div><h4><s>Una visa que no necesitabas</s></h4><p class="r">Elegir sin conocer tu perfil puede costarte meses y dinero.</p><p class="fix">Con Entrelingo: analizamos tu perfil antes de elegir la visa.</p></div></div>
-        <div class="risk rv d2"><span class="x"><svg class="bad" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><svg class="good" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span><div><h4><s>Un curso que no suma a tu camino</s></h4><p class="r">Estudiar algo sin propósito migratorio es tiempo perdido.</p><p class="fix">Con Entrelingo: eliges estudios que sí cuentan para tu objetivo.</p></div></div>
-        <div class="risk rv d3"><span class="x"><svg class="bad" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><svg class="good" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span><div><h4><s>Un documento mal presentado</s></h4><p class="r">Un error de forma puede demorar o frenar todo el proceso.</p><p class="fix">Con Entrelingo: revisamos tus documentos antes de presentarlos.</p></div></div>
+        <div class="risk rv d1"><span class="x"><svg aria-hidden="true" focusable="false" class="bad" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><svg aria-hidden="true" focusable="false" class="good" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span><div><h4><s>Una visa que no necesitabas</s></h4><p class="r">Elegir sin conocer tu perfil puede costarte meses y dinero.</p><p class="fix">Con Entrelingo: analizamos tu perfil antes de elegir la visa.</p></div></div>
+        <div class="risk rv d2"><span class="x"><svg aria-hidden="true" focusable="false" class="bad" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><svg aria-hidden="true" focusable="false" class="good" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span><div><h4><s>Un curso que no suma a tu camino</s></h4><p class="r">Estudiar algo sin propósito migratorio es tiempo perdido.</p><p class="fix">Con Entrelingo: eliges estudios que sí cuentan para tu objetivo.</p></div></div>
+        <div class="risk rv d3"><span class="x"><svg aria-hidden="true" focusable="false" class="bad" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><svg aria-hidden="true" focusable="false" class="good" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span><div><h4><s>Un documento mal presentado</s></h4><p class="r">Un error de forma puede demorar o frenar todo el proceso.</p><p class="fix">Con Entrelingo: revisamos tus documentos antes de presentarlos.</p></div></div>
       </div>
     </div>
   </section>
@@ -490,9 +495,9 @@
         <h2>Cuéntanos tu caso</h2>
         <p class="sub">Elige el servicio que necesitas y te escribe el equipo correspondiente. Sin compromiso.</p>
         <ul class="checks">
-          <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Te respondemos en español</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Habla con el equipo del servicio que elijas</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Usamos tus datos solo para contactarte</li>
+          <li><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Te respondemos en español</li>
+          <li><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Habla con el equipo del servicio que elijas</li>
+          <li><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Usamos tus datos solo para contactarte</li>
         </ul>
         <div class="next">
           <h3>Qué pasa después</h3>
@@ -509,16 +514,16 @@
           <p class="msg" id="lf-msg" role="alert" aria-live="polite"></p>
           <fieldset class="svc">
             <legend>¿Qué servicio necesitas?</legend>
-            <label class="opt"><input type="radio" name="marca" value="Entrelingo" required><span><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><b>Traducciones</b><small>NAATI y certificadas</small></span></label>
-            <label class="opt"><input type="radio" name="marca" value="SkillsPRO"><span><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5 7 22l5-3 5 3-1.5-7.5"/></svg><b>Skills Assessment</b><small>Reconocimiento profesional</small></span></label>
-            <label class="opt"><input type="radio" name="marca" value="AustraliaPRO"><span><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8z"/></svg><b>Visas y migración</b><small>Asesoría con agentes MARA</small></span></label>
+            <label class="opt"><input type="radio" name="marca" value="Entrelingo" required><span><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><b>Traducciones</b><small>NAATI y certificadas</small></span></label>
+            <label class="opt"><input type="radio" name="marca" value="SkillsPRO"><span><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5 7 22l5-3 5 3-1.5-7.5"/></svg><b>Skills Assessment</b><small>Reconocimiento profesional</small></span></label>
+            <label class="opt"><input type="radio" name="marca" value="AustraliaPRO"><span><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8z"/></svg><b>Visas y migración</b><small>Asesoría con agentes MARA</small></span></label>
           </fieldset>
           <div class="row2">
-            <div class="fld"><label for="f-nombre">Nombre completo</label><input id="f-nombre" name="nombre" type="text" autocomplete="name" required placeholder="Ana Gómez"></div>
-            <div class="fld"><label for="f-email">Correo electrónico</label><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="ana@correo.com"></div>
+            <div class="fld"><label for="f-nombre">Nombre completo</label><input id="f-nombre" name="nombre" type="text" autocomplete="name" required placeholder="Ana Gómez…"></div>
+            <div class="fld"><label for="f-email">Correo electrónico</label><input id="f-email" name="email" type="email" autocomplete="email" spellcheck="false" inputmode="email" required placeholder="ana@correo.com…"></div>
           </div>
           <div class="row2">
-            <div class="fld"><label for="f-wa">WhatsApp <em>(con código de país)</em></label><input id="f-wa" name="whatsapp" type="tel" autocomplete="tel" placeholder="+57 300 123 4567"></div>
+            <div class="fld"><label for="f-wa">WhatsApp <em>(con código de país)</em></label><input id="f-wa" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="+57 300 123 4567…"></div>
             <div class="fld"><label for="f-pais">País donde vives</label>
               <select id="f-pais" name="pais" autocomplete="country-name"><option value="">Selecciona tu país</option><option>Colombia</option><option>México</option><option>Argentina</option><option>Chile</option><option>Perú</option><option>Ecuador</option><option>Venezuela</option><option>España</option><option>Estados Unidos</option><option>Australia</option><option>Otro</option></select></div>
           </div>
@@ -528,13 +533,15 @@
           <button class="btn primary send" type="submit"><span class="t">Enviar mi consulta</span><svg class="pl" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></button>
         </form>
         <div class="ok" id="lf-ok" hidden>
-          <div class="okico"><svg viewBox="0 0 24 24"><path pathLength="1" d="M5 12l4 4 10-10"/></svg></div>
+          <div class="okico"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path pathLength="1" d="M5 12l4 4 10-10"/></svg></div>
           <h3 class="serif">¡Listo, recibimos tu consulta!</h3>
           <p id="ok-p">Te escribiremos pronto al correo y al WhatsApp que nos dejaste.</p>
         </div>
       </div>
     </div>
   </section>
+
+  </main>
 
   <footer class="foot">
     <div class="wrap">
@@ -699,15 +706,16 @@
   /* ---- destinations carousel ---- */
   var car = $('#car');
   if (car) {
-    var sl = $$('.sl', car), dotsEl = $('#dots'), cur = 0, timer = null, DUR = 6000;
+    var sl = $$('.sl', car), dotsEl = $('#dots'), cur = 0, timer = null, DUR = 6000, hold = false;
     dotsEl.style.setProperty('--dur', DUR + 'ms');
     sl.forEach(function (_, i) { var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Ir a la imagen ' + (i + 1)); b.innerHTML = '<i></i>'; b.addEventListener('click', function () { go(i, true); }); dotsEl.appendChild(b); });
     var dots = $$('button', dotsEl);
     function go(n, manual) {
       cur = (n + sl.length) % sl.length;
       sl.forEach(function (s, i) { s.classList.toggle('on', i === cur); }); dots.forEach(function (d, i) { d.classList.remove('on'); if (i === cur) { void d.offsetWidth; d.classList.add('on'); } });
-      clearTimeout(timer); if (!reduce) timer = setTimeout(function () { go(cur + 1); }, DUR);
+      clearTimeout(timer); if (!reduce && !hold) timer = setTimeout(function () { go(cur + 1); }, DUR);
     }
+    var pb = $('#cpause'); pb.addEventListener('click', function () { hold = !hold; car.classList.toggle('hold', hold); pb.setAttribute('aria-pressed', hold); pb.setAttribute('aria-label', hold ? 'Reanudar carrusel' : 'Pausar carrusel'); pb.firstChild.nextSibling; if (hold) clearTimeout(timer); else go(cur); });
     $('#cprev').addEventListener('click', function () { go(cur - 1, true); }); $('#cnext').addEventListener('click', function () { go(cur + 1, true); });
     car.addEventListener('pointerenter', function () { if (canHover) { car.classList.add('paused'); clearTimeout(timer); } });
     car.addEventListener('pointerleave', function () { if (canHover) { car.classList.remove('paused'); go(cur); } });
